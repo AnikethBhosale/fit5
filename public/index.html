@@ -28,14 +28,24 @@
 
     <div id="main-page" class="page hidden">
         <div class="game-header">
-            <div class="player-stats">
-                <span id="player-level">Level: 1</span>
-                <div class="xp-bar">
-                    <div id="xp-progress"></div>
+            <div class="header-left">
+                <div class="brand-name">FitSync</div>
+                <div class="player-stats">
+                    <span id="player-level">Level: 1</span>
+                    <div class="xp-bar">
+                        <div id="xp-progress"></div>
+                    </div>
+                    <span id="player-xp">XP: 0/1000</span>
                 </div>
-                <span id="player-xp">XP: 0/1000</span>
+                <nav class="header-nav">
+                    <a href="#exercise-selection" class="nav-link">Exercise</a>
+                    <a href="#leaderboard" class="nav-link">Leaderboard</a>
+                    <a href="#badges-section" class="nav-link">Achievements</a>
+                </nav>
             </div>
-            <button onclick="logout()" class="logout-btn">Logout</button>
+            <div class="header-right">
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
         </div>
 
         <div class="game-content">
@@ -52,7 +62,25 @@
                 </div>
             </div>
 
-            <div class="exercise-selection">
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Prevent Pain & Injury</h3>
+                    <p>Good posture reduces strain on your muscles and ligaments, preventing chronic pain and injury.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Boost Energy & Focus</h3>
+                    <p>Proper posture improves breathing and circulation, leading to better energy levels and concentration.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">😊</div>
+                    <h3>Build Confidence</h3>
+                    <p>Standing and sitting tall enhances your appearance and boosts your self-image and confidence.</p>
+                </div>
+            </div>
+
+            <div class="exercise-selection" id="exercise-selection">
                 <h2>Choose Your Exercise</h2>
                 <button class="slider-nav slider-prev" onclick="slideExercises('prev')">←</button>
                 <button class="slider-nav slider-next" onclick="slideExercises('next')">→</button>
@@ -95,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="leaderboard">
+            <div class="leaderboard" id="leaderboard">
                 <h2>Leaderboard</h2>
                 <div class="leaderboard-header">
                     <div class="rank">Rank</div>
@@ -107,7 +135,7 @@
             </div>
         </div>
 
-        <div class="badges-section">
+        <div class="badges-section" id="badges-section">
             <h2>Your Achievements</h2>
             <div class="badges-grid" id="badges-container">
                 <!-- Badges will be dynamically added here -->
