@@ -508,3 +508,8 @@ function setupCircularSlider() {
     firstCardClone.addEventListener('click', () => selectExercise(cards[0].getAttribute('onclick').match(/'(.+?)'/)[1]));
     lastCardClone.addEventListener('click', () => selectExercise(cards[cards.length - 1].getAttribute('onclick').match(/'(.+?)'/)[1]));
 }
+
+function scrollToExercises() {
+    const exerciseSection = document.querySelector('.exercise-selection');
+    exerciseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
