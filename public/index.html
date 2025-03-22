@@ -41,26 +41,43 @@
         <div class="game-content">
             <div class="exercise-selection">
                 <h2>Choose Your Exercise</h2>
+                <button class="slider-nav slider-prev" onclick="slideExercises('prev')">←</button>
+                <button class="slider-nav slider-next" onclick="slideExercises('next')">→</button>
                 <div class="exercise-buttons">
                     <button onclick="selectExercise('pushup')" class="exercise-btn">
-                        <span class="exercise-name">Push-ups</span>
-                        <span class="exercise-xp">5 XP/rep</span>
+                        <img src="images/pushup.jpg" alt="Push-ups" class="exercise-image">
+                        <div class="exercise-content">
+                            <span class="exercise-name">Push-ups</span>
+                            <span class="exercise-xp">5 XP/rep</span>
+                        </div>
                     </button>
                     <button onclick="selectExercise('squat')" class="exercise-btn">
-                        <span class="exercise-name">Squats</span>
-                        <span class="exercise-xp">5 XP/rep</span>
+                        <img src="images/squat.jpg" alt="Squats" class="exercise-image">
+                        <div class="exercise-content">
+                            <span class="exercise-name">Squats</span>
+                            <span class="exercise-xp">5 XP/rep</span>
+                        </div>
                     </button>
                     <button onclick="selectExercise('plank')" class="exercise-btn">
-                        <span class="exercise-name">Plank</span>
-                        <span class="exercise-xp">10 XP/sec</span>
+                        <img src="images/plank.jpg" alt="Plank" class="exercise-image">
+                        <div class="exercise-content">
+                            <span class="exercise-name">Plank</span>
+                            <span class="exercise-xp">10 XP/sec</span>
+                        </div>
                     </button>
                     <button onclick="selectExercise('jumpingjack')" class="exercise-btn">
-                        <span class="exercise-name">Jumping Jacks</span>
-                        <span class="exercise-xp">3 XP/rep</span>
+                        <img src="images/jumpingjack.jpg" alt="Jumping Jacks" class="exercise-image">
+                        <div class="exercise-content">
+                            <span class="exercise-name">Jumping Jacks</span>
+                            <span class="exercise-xp">3 XP/rep</span>
+                        </div>
                     </button>
                     <button onclick="selectExercise('armraises')" class="exercise-btn">
-                        <span class="exercise-name">Arm Raises</span>
-                        <span class="exercise-xp">2 XP/rep</span>
+                        <img src="images/armraises.jpg" alt="Arm Raises" class="exercise-image">
+                        <div class="exercise-content">
+                            <span class="exercise-name">Arm Raises</span>
+                            <span class="exercise-xp">2 XP/rep</span>
+                        </div>
                     </button>
                 </div>
             </div>

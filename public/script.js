@@ -7,6 +7,9 @@ let inProperPosition = false;
 let videoElement;
 let userProfile = null;
 let shownBadges = new Set();
+let currentSlide = 0;
+const slideCount = document.querySelectorAll('.exercise-btn').length;
+const cardsPerView = 4;
 
 // Add badge definitions
 const badges = [
@@ -461,5 +464,47 @@ window.addEventListener('resize', () => {
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
+    setupCircularSlider();
     showPage('auth-page');
 });
+
+function slideExercises(direction) {
+    const container = document.querySelector('.exercise-buttons');
+    const cardWidth = container.querySelector('.exercise-btn').offsetWidth + 30; // 30 is the gap
+    
+    if (direction === 'next') {
+        currentSlide++;
+        if (currentSlide >= slideCount) {
+            currentSlide = 0;
+            container.scrollLeft = 0;
+        } else {
+            container.scrollLeft += cardWidth;
+        }
+    } else {
+        currentSlide--;
+        if (currentSlide < 0) {
+            currentSlide = slideCount - 1;
+            container.scrollLeft = cardWidth * (slideCount - cardsPerView);
+        } else {
+            container.scrollLeft -= cardWidth;
+        }
+    }
+}
+
+// Clone cards for circular effect
+function setupCircularSlider() {
+    const container = document.querySelector('.exercise-buttons');
+    const cards = Array.from(container.querySelectorAll('.exercise-btn'));
+    
+    // Clone first card and append to end
+    const firstCardClone = cards[0].cloneNode(true);
+    container.appendChild(firstCardClone);
+    
+    // Clone last card and prepend to beginning
+    const lastCardClone = cards[cards.length - 1].cloneNode(true);
+    container.insertBefore(lastCardClone, cards[0]);
+    
+    // Update event listeners for cloned cards
+    firstCardClone.addEventListener('click', () => selectExercise(cards[0].getAttribute('onclick').match(/'(.+?)'/)[1]));
+    lastCardClone.addEventListener('click', () => selectExercise(cards[cards.length - 1].getAttribute('onclick').match(/'(.+?)'/)[1]));
+}
