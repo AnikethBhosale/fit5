@@ -130,7 +130,14 @@ body {
 .exercise-selection {
     width: 100%;
     position: relative;
-    padding: 0 60px;
+    padding: 0 60px 0 20px;
+}
+
+.exercise-selection h2 {
+    margin-left: 20px;
+    color: var(--accent-color);
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .exercise-buttons {
@@ -624,7 +631,7 @@ body {
 }
 
 .slider-prev {
-    left: 0;
+    left: -10px;
 }
 
 .slider-next {
