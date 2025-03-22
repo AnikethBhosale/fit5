@@ -856,3 +856,30 @@ body {
         margin: 20px;
     }
 }
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.quote-author {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
