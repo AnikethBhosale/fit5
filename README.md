@@ -1,4 +1,4 @@
-# Fitness Quest
+# FitSync
 
 A gamified fitness website that uses pose estimation to track exercises and reward users with experience points and levels.
 
